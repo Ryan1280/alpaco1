@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>추천된 학습 콘텐츠</h1>
+    <ul>
+        {% for _, row in content_list.iterrows() %}
+            <li><b>{{ row['title'] }}</b> ({{ row['category'] }} - {{ row['difficulty'] }}): {{ row['description'] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">다시 검색</a>
+</body>
+</html>
